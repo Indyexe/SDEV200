@@ -12,17 +12,17 @@ public class DistanceConversion {
     
     public static void main(String[] args) {
         //Top of the table
-        System.out.println("Feet    Meters  |   Meters  Feet");
+        System.out.println("Feet        Meters      |      Meters      Feet");
 
         //Outline of the table
-        String firstHalf = "-".repeat(15);
-        String secondHalf = "-".repeat(17);
+        String firstHalf = "-".repeat(23);
+        String secondHalf = "-".repeat(24);
         String output = firstHalf + " | " + secondHalf;
         System.out.println(output);
 
         //Loop for vertical |'s
         for (int i =0; i <11; i++) {
-            System.out.println(" ".repeat(15) + " | "+" ".repeat(17));
+            System.out.println(" ".repeat(23) + " | "+" ".repeat(17));
         }
     }
 }
