@@ -5,7 +5,10 @@ public class DistanceConversion {
     }
 
     public static double meterToFoot (double meter) {
-        return 3.2787 * meter; // This formula was wrong in the textbook it originally was 3.279
+        return 3.2787 * meter; /* I couldn't figure out this conversion rate as the one in the textbook was 3.279, which didn't give me
+        the correct values for the meters to feet output. This was the number that got me the closest to the table values which were on the
+        textbook*/
+
     }
 
     
