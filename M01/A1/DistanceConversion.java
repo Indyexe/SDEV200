@@ -20,9 +20,16 @@ public class DistanceConversion {
         String output = firstHalf + " | " + secondHalf;
         System.out.println(output);
 
-        //Loop for vertical |'s
-        for (int i =0; i <11; i++) {
-            System.out.println(" ".repeat(23) + " | "+" ".repeat(17));
+        //Loop for table output
+        for (int i =1; i <11; i++) {
+            double feet = i;
+            double metersFromFeet = footToMeter(feet);
+
+            double meters = 20.0 + 5 * (i - 1);
+            double feetFromMeters = meterToFoot(meters);
+
+            String row = feet + "       " + metersFromFeet + "      |       "+ meters + "       "+ feetFromMeters;
+            System.out.println(row);
         }
     }
 }
