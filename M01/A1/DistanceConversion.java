@@ -15,8 +15,14 @@ public class DistanceConversion {
         System.out.println("Feet    Meters  |   Meters  Feet");
 
         //Outline of the table
-        String firstHalf = "-".repeat(20);
-        String secondHalf = "-".repeat(20);
-        for (int)
+        String firstHalf = "-".repeat(15);
+        String secondHalf = "-".repeat(17);
+        String output = firstHalf + " | " + secondHalf;
+        System.out.println(output);
+
+        //Loop for vertical |'s
+        for (int i =0; i <11; i++) {
+            System.out.println(" ".repeat(15) + " | "+" ".repeat(17));
+        }
     }
 }
