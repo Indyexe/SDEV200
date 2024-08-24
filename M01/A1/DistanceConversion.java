@@ -5,7 +5,7 @@ public class DistanceConversion {
     }
 
     public static double meterToFoot (double meter) {
-        return 3.279 * meter;
+        return 3.2787 * meter; // This formula was wrong in the textbook it originally was 3.279
     }
 
     
@@ -27,8 +27,8 @@ public class DistanceConversion {
 
             double meters = 20.0 + 5 * (i - 1);
             double feetFromMeters = meterToFoot(meters);
-
-            String row = feet + "       " + metersFromFeet + "      |       "+ meters + "       "+ feetFromMeters;
+            //for the line of code below I used this article https://stackoverflow.com/questions/153724/how-to-round-a-number-to-n-decimal-places-in-java to help me round the decimal places
+            String row = String.format("%.1f         %.3f       |       %.1f       %.3f", feet, metersFromFeet, meters, feetFromMeters);
             System.out.println(row);
         }
     }
