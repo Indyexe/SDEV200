@@ -66,6 +66,7 @@ public class TheTriangleClass {
             this.side3 = side3;
         }
 
+        //Methods for gettings sides * added for new commmit
         public double getFirstSide() {
             return side1;
         }
@@ -79,20 +80,17 @@ public class TheTriangleClass {
         }
 
         // Implements the abstract method to calculate the area
-        @Override
         public double getArea() {
             double angleC = Math.acos((side1 * side1 + side2 * side2 - side3 * side3) / (2 * side1 * side2));
             return 0.5 * side1 * side2 * Math.sin(angleC);
         }
 
         // Implements the abstract method to calculate the perimeter
-        @Override
         public double getPerimeter() {
             return side1 + side2 + side3;
         }
 
         // This String describes the triangle
-        @Override
         public String toString() {
             return "Triangle Details: " +
             "\nSide 1: " + side1 + 
