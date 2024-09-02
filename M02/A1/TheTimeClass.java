@@ -55,8 +55,9 @@ public class TheTimeClass {
         }
     }
 
-        public static void main(String[] args) {
-        // Instantiating the Time objects
+    // Main method, the entry point of the program
+    public static void main(String[] args) {
+        // Instantiate the Time objects
         TheTimeClass outer = new TheTimeClass();
         Time timenow = outer.new Time(); // Creating an instance with the current time
         Time elapsedTime = outer.new Time(555550000); // Creating an instance with milliseconds since 1970
