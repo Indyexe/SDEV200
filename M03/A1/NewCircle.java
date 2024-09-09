@@ -135,7 +135,8 @@ public class GeometricObject {
 
 }
 
-//I didn't feel the need to create a test program for this assignment since the book just stated to override the equals method.
+/*I didn't feel the need to create a test program for this assignment since 
+the book just stated to overide the equals method, extennd the GeometricObject, and implement the comparable interface. */
 
 public static void main(String[] args) {
     System.out.println(printCircle);
