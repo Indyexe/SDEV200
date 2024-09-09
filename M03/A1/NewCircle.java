@@ -1,4 +1,8 @@
-Public class NewCircle { 
+
+
+import java.time.chrono.ThaiBuddhistChronology;
+
+ public class NewCircle { 
 
   public class GeometricObject {
     private String color = "white";
@@ -51,7 +55,9 @@ Public class NewCircle {
     }
   }
 
-public class Circle extends GeometricObject {
+public class Circle extends GeometricObject
+implements Comparable<Circle> {
+
 
 
 public class GeometricObject { 
@@ -96,6 +102,29 @@ public class GeometricObject {
       return 2 * radius * Math.PI;
     }
 
+
+    // This method compares the circles to eachother
+
+    @Override 
+    public int compareEach(Circle otherCircle) {
+      if (this.radius == otherCircle.radius) {
+        return 0;
+      }
+      return this.radius > otherCircle.radius ? 1 : -1;
+
+    }
+// This is the equals method that confims or denies if the radiuses are the same when comparing the circles
+    @Override
+    public boolean equals(Object obj) {
+      if (obj instanceof Circle) {
+        Circle other = (Circle) obj;
+        return this.radius == other.radius;
+      }
+      return false;
+    }
+    
+
+
     /** Print the circle info */
     public void printCircle() {
       System.out.println("The circle is created " + getDateCreated() +
@@ -106,8 +135,11 @@ public class GeometricObject {
 
 }
 
+//I didn't feel the need to create a test program for this assignment since the book just stated to override the equals method.
+
 public static void main(String[] args) {
     System.out.println(printCircle);
+    
 }
 
 }
