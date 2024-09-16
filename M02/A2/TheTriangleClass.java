@@ -36,12 +36,16 @@ public class TheTriangleClass {
             this.filled = filled;
         }
 
+
+
         // Abstract method to find the area
         public abstract double getArea();
 
         // Abstract method to get the perimeter
         public abstract double getPerimeter();
     }
+
+ 
 
     // Extending the GeometricObject
     public class Triangle extends GeometricObject {

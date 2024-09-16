@@ -1,0 +1,6 @@
+check
+words
+on
+in
+alphabetical
+order

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TheTriangleClass {
+public class NewTriangle {
 
     public abstract class GeometricObject {
         private String color = "white";
@@ -98,6 +98,7 @@ public class TheTriangleClass {
             "\nSide 3: " + side3 +
             "\nTotal Perimeter: " + getPerimeter() +
             "\nArea: " + getArea();
+            "\nFilled: " + ();
         }
     }
 
@@ -120,12 +121,14 @@ public class TheTriangleClass {
         System.out.println("Is the triangle filled? Please input True or False: ");
         boolean filled = input.nextBoolean();
 
-        TheTriangleClass outer = new TheTriangleClass();
+        NewTriangle outer = new NewTriangle();
         Triangle triangle = outer.new Triangle(side1, side2, side3, color, filled);
 
         // This displays the properties of the triangle
         System.out.println("\nThis is what your Triangle is detailed of:");
         System.out.println(triangle);
+        
+
 
         input.close();
     }
