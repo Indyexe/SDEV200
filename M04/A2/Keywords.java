@@ -32,16 +32,57 @@ import java.util.*;
 
       Set<String> keywordSet =
         new HashSet<>(Arrays.asList(keywordString));
-      int count = 0;
+      int keywordCount = 0;
+    boolean inCommentBlock = false; // Checks if inside a block comment
 
-      Scanner input = new Scanner(file);
+    // This usses BufferedReader to read contents of file line by line
+    BufferedReader reader = new BufferedReader(new FileReader(file));
+    String line;
 
-      while (input.hasNext()) {
-        String word = input.next();
-        if (keywordSet.contains(word))
-          count++;
-      }
-
-      return count;
+        // This post on stackoverflow helped me with this while statement https://stackoverflow.com/questions/77452826/java-substring-of-multi-line-string-up-to-nth-line-and-character-index-on-that-l
+    while ((line = reader.readLine()) != null) { 
+        // This helps handle multi line comment blocks
+        if (inCommentBlock) {
+            int endCommentIndex = line.indexOf("/");
+            if (endCommentIndex != -1) {
+                inCommentBlock = false; // End of comment block found
+                line = line.substring(endCommentIndex + 2); 
+            } else {
+                continue; 
+            }
+        }
     }
-  }
+
+        int startCommentIndex = line.indexOf("/");
+        if (startCommentIndex != -1) {
+            inCommentBlock = true;
+            line = line.substring(0, startCommentIndex); 
+        }
+
+        // This portion of code helps handle single line comments
+        int singleLineCommentIndex = line.indexOf("//");
+        if (singleLineCommentIndex != -1) {
+            line = line.substring(0, singleLineCommentIndex); 
+        }
+
+
+        line = line.replaceAll
+        
+        // Tokenize the line using non-word characters as delimiters
+        String[] tokens = line.split("[^a-zA-Z0-9_]+");
+
+        // This checks each token to see if it's a keyword
+        for (String token : tokens) {
+            if (keywordSet.contains(token)) {
+                keywordCount++; // Increments the keyword count if the token is a keyword
+            }
+        }
+    }
+
+    reader.close(); 
+    return keywordCount;
+} 
+
+    }
+
+    //I coudn't get the program to compile despite trying to debug the program.
